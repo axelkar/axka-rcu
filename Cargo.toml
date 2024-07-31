@@ -1,0 +1,22 @@
+[package]
+name = "axka-rcu"
+version = "1.0.0"
+authors = ["Axel Karjalainen <axel@axka.fi>"]
+edition = "2021"
+description = "A reference-counted read-copy-update (RCU) primitive used for protecting shared data"
+readme = "README.md"
+homepage = "https://git.axka.fi/axka-rcu.git/about/"
+repository = "https://github.com/axelkar/axka-rcu"
+license = "MIT OR Apache-2.0"
+keywords = ["rcu", "arc", "sync", "data-structure"]
+categories = ["concurrency", "data-structures", "no-std"]
+
+[dependencies]
+document-features = "0.2"
+triomphe = { version = "0.1.3", optional = true }
+
+[features]
+## Use `triomphe::Arc` which doesn't have weak references
+##
+## This also enables `no_std` support.
+triomphe = ["dep:triomphe"]
