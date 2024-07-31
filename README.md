@@ -7,7 +7,7 @@ A reference-counted read-copy-update (RCU) primitive useful for protecting share
 
 ## Example
 
-```
+```rs
 use std::{thread::sleep, time::Duration, sync::Arc};
 use axka_rcu::Rcu;
 
